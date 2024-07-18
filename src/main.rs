@@ -70,6 +70,7 @@ fn main() {
     framebuffer.set_background_color(0x000000); // Negro
     framebuffer.clear();
 
+    // Polígono 1
     let points = vec![
         new_vertex(165.0, 380.0, 0.0),
         new_vertex(185.0, 360.0, 0.0),
@@ -88,6 +89,20 @@ fn main() {
 
     framebuffer.set_current_color(0xFFFFFF); // Blanco
     draw_polygon(&mut framebuffer, &points);
+
+    // Polígono 2
+    let points2 = vec![
+    new_vertex(321.0, 335.0, 0.0),
+    new_vertex(288.0, 286.0, 0.0),
+    new_vertex(339.0, 251.0, 0.0),
+    new_vertex(374.0, 302.0, 0.0),
+    ];
+
+    framebuffer.set_current_color(0x0000FF); // Azul
+    fill_polygon(&mut framebuffer, &points2);
+
+    framebuffer.set_current_color(0xFFFFFF); // Blanco
+    draw_polygon(&mut framebuffer, &points2);
 
     framebuffer.render_buffer("out.bmp").unwrap();
 
