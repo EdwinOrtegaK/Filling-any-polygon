@@ -117,6 +117,48 @@ fn main() {
     framebuffer.set_current_color(0xFFFFFF); // Blanco
     draw_polygon(&mut framebuffer, &points3);
 
+    // Polígono 4
+    let points4 = vec![
+        new_vertex(413.0, 177.0, 0.0),
+        new_vertex(448.0, 159.0, 0.0),
+        new_vertex(502.0, 88.0, 0.0),
+        new_vertex(553.0, 53.0, 0.0),
+        new_vertex(535.0, 36.0, 0.0),
+        new_vertex(676.0, 37.0, 0.0),
+        new_vertex(660.0, 52.0, 0.0),
+        new_vertex(750.0, 145.0, 0.0),
+        new_vertex(761.0, 179.0, 0.0),
+        new_vertex(672.0, 192.0, 0.0),
+        new_vertex(659.0, 214.0, 0.0),
+        new_vertex(615.0, 214.0, 0.0),
+        new_vertex(632.0, 230.0, 0.0),
+        new_vertex(580.0, 230.0, 0.0),
+        new_vertex(597.0, 215.0, 0.0),
+        new_vertex(552.0, 214.0, 0.0),
+        new_vertex(517.0, 144.0, 0.0),
+        new_vertex(466.0, 180.0, 0.0),
+    ];
+
+    framebuffer.set_current_color(0x00FF00); // Verde
+    fill_polygon(&mut framebuffer, &points4);
+
+    framebuffer.set_current_color(0xFFFFFF); // Blanco
+    draw_polygon(&mut framebuffer, &points4);
+
+    // Polígono 5 (agujero)
+    let points5 = vec![
+        new_vertex(682.0, 175.0, 0.0),
+        new_vertex(708.0, 120.0, 0.0),
+        new_vertex(735.0, 148.0, 0.0),
+        new_vertex(739.0, 170.0, 0.0),
+    ];
+
+    framebuffer.set_current_color(0x000000); // Negro para agujero
+    fill_polygon(&mut framebuffer, &points5);
+
+    framebuffer.set_current_color(0xFFFFFF); // Blanco
+    draw_polygon(&mut framebuffer, &points5);
+
     framebuffer.render_buffer("out.bmp").unwrap();
 
     println!("Framebuffer rendered to out.bmp");
