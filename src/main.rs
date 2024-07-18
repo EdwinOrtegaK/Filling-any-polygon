@@ -104,6 +104,19 @@ fn main() {
     framebuffer.set_current_color(0xFFFFFF); // Blanco
     draw_polygon(&mut framebuffer, &points2);
 
+    // Polígono 3
+    let points3 = vec![
+        new_vertex(377.0, 249.0, 0.0),
+        new_vertex(411.0, 197.0, 0.0),
+        new_vertex(436.0, 249.0, 0.0),
+    ];
+
+    framebuffer.set_current_color(0xFF0000); // Rojo
+    fill_polygon(&mut framebuffer, &points3);
+
+    framebuffer.set_current_color(0xFFFFFF); // Blanco
+    draw_polygon(&mut framebuffer, &points3);
+
     framebuffer.render_buffer("out.bmp").unwrap();
 
     println!("Framebuffer rendered to out.bmp");
